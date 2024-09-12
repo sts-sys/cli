@@ -14,14 +14,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "sts\\cli\\": "src/",
+            "sts\\cli\\": "src/"
         }
     },
-    "require": {
-    },
-
-    "require-dev": {
-    },\
 
     "minimum-stability": "dev"
 }

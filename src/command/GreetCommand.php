@@ -1,6 +1,6 @@
 <?php
 
-namespace sts\command;
+namespace sts\cli\command;
 
 class GreetCommand
 {

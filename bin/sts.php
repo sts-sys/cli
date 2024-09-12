@@ -3,7 +3,7 @@
 
 require __DIR__ . '/../vendor/autoload.php'; // Autoloading prin Composer
 
-use sts\command\GreetCommand;
+use sts\cli\command\GreetCommand;
 
 // Lista de comenzi disponibile
 $commands = [
