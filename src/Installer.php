@@ -16,5 +16,31 @@ class Installer {
         // Calea către fișierul CLI care va fi creat
         $cliFilePath = $baseDir . 'cli.php';
 
+        $cliContent = <<<PHP
+        #!/usr/bin/env php
+        <?php
+
+        require __DIR__ . '/../vendor/autoload.php';
+        
+        use sts\cli\CommandDispatcher;
+        use sts\cli\CommandRegistry;
+
+        // Înregistrează comenzile
+        \$registry = new CommandRegistry();
+        
+        // Adaugă aici comenzile tale, exemplu:
+//          \$registry->registerCommand('plugin:create',     new \sts\cli\command\PluginCreateCommand());
+
+      \$dispatcher = new CommandDispatcher(\.  $registry);
+        \$dispatcher->dispatch(\$argv);
+
+        PHP;
+        // Creează fișierul CLI
+        file_put_contents($cliFilePath, $cliContent);
+
+        // Setează permisiunile fișierului ca fiind executabile
+        chmod($cliFilePath, 0755);
+
+        echo "Fișierul CLI a fost creat cu succes la $cliFilePath\n";
    }
 }
