@@ -17,6 +17,13 @@
             "sts\\cli\\": "src/"
         }
     },
+    "scripts": {
+        "post-install-cmd": "sts\\cli\\Installer::postInstall",
+        "post-update-cmd": "sts\\cli\\Installer::postInstall"
+    },
+    "require": {
+        "php": "^7.4 || ^8.0"
+    },
 
     "minimum-stability": "dev"
 }
