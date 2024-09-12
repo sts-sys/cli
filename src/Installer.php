@@ -7,7 +7,7 @@ class Installer {
    {
         if(!defined('APP_PATH'))
            thow new Exception("Failed to check application root path.");
-
+        $baseDir = APP_PATH ?? '';
         // Creează directorul 'bin' dacă nu există
         if (!file_exists($baseDir)) {
             mkdir($baseDir, 0755, true);
