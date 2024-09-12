@@ -14,7 +14,7 @@ class Installer {
         }
 
         // Calea către fișierul CLI care va fi creat
-        $cliFilePath = $baseDir . '/cli.php';
+        $cliFilePath = $baseDir . 'cli.php';
 
    }
 }
