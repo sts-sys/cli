@@ -1,6 +1,5 @@
 #!/usr/bin/env php
 <?php
-
 require __DIR__ . '/../vendor/autoload.php'; // Autoloading prin Composer
 
 use sts\cli\command\GreetCommand;
