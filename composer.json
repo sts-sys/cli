@@ -1,0 +1,27 @@
+{
+    "name": "sts/cli",
+    "description": "CLI for STS framework",
+    "type": "library",
+    "keywords": ["cli", "sts", "library", "framework"],
+    "license": "MIT",
+    "version": "1.0-dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Staark",
+            "email": "ionuzcostin@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "sts\\cli\\": "src/",
+        }
+    },
+    "require": {
+    },
+
+    "require-dev": {
+    },\
+
+    "minimum-stability": "dev"
+}
