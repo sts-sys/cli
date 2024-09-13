@@ -1,5 +1,5 @@
 <?php
-namespace sts\cli\command;
+namespace sts\cli;
 
 interface CommandInterface
 {
