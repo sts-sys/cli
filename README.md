@@ -49,7 +49,33 @@ Pentru a utiliza aplicația CLI, navighează la directorul rădăcină al proiec
 
 ``--help`` sau ``-h``: Afișează ajutor pentru o comandă specifică.
 
-## Contribuții 
+## Exemple
+### Rulează migrațiile
+
+Pentru a rula toate migrațiile:
+```sh
+php bin/cli.php migrate:run
+```
+
+Pentru a forța rularea tuturor migrațiilor:
+```sh
+php bin/cli.php migrate:run --force
+```
+
+### Verifică starea migrărilor
+Pentru a verifica dacă există migrații care trebuie aplicate:
+
+```sh
+php bin/cli.php migrate:check
+```
+
+### Creează un plugin
+Pentru a crea un nou plugin:
+```sh
+php bin/cli.php plugin:create MyPlugin module [widget]
+```
+
+##  Contribuție
 Contribuțiile sunt binevenite! Urmează pașii de mai jos pentru a contribui:
 
 Forkează acest depozit.
