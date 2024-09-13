@@ -31,6 +31,10 @@ class Installer {
         // Adaugă aici comenzile tale, exemplu:
         $registry->registerCommand('plugin:create', new \sts\cli\command\PluginCreateCommand());
         $registry->registerCommand('help', new \sts\cli\command\HelpCommand());
+$registry->registerCommand('help', new HelpCommand($registry));
+$registry->registerCommand('migrate:run', new MigrationCommand());
+$registry->registerCommand('migrate:check', new MigrationCommand());
+     $registry->registerCommand('migrate:rollback', new MigrationCommand());
            
         $dispatcher = new CommandDispatcher($registry);
         $dispatcher->dispatch(\$argv);
