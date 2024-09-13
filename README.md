@@ -1,2 +1,2 @@
-# cli
+# CLI Package 
 STS Solutions Cli
