@@ -1,7 +1,7 @@
 <?php
 namespace sts\cli;
 
-use sts\cli\command\CommandInterface;
+use sts\cli\CommandInterface;
 
 class CommandRegistry
 {
