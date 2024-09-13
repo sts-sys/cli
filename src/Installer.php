@@ -26,13 +26,14 @@ class Installer {
         use sts\cli\CommandRegistry;
 
         // Înregistrează comenzile
-        \$registry = new CommandRegistry();
+        $registry = new CommandRegistry();
         
         // Adaugă aici comenzile tale, exemplu:
-//          \$registry->registerCommand('plugin:create',     new \sts\cli\command\PluginCreateCommand());
-
-      \$dispatcher = new CommandDispatcher(\.  $registry);
-        \$dispatcher->dispatch(\$argv);
+        $registry->registerCommand('plugin:create', new \sts\cli\command\PluginCreateCommand());
+        $registry->registerCommand('help', new \sts\cli\command\HelpCommand());
+           
+        $dispatcher = new CommandDispatcher($registry);
+        $dispatcher->dispatch(\$argv);
 
         PHP;
         // Creează fișierul CLI
