@@ -6,7 +6,7 @@ class Installer {
    {
         echo "[*] Rularea scriptului...\n";
        
-        $baseDir = __DIR__ . '../';
+        $baseDir = __DIR__ . '../../../../';
         echo "[*] Creează directorul 'bin' dacă nu există...\n";
         if (!file_exists($baseDir . 'bin')) {
             mkdir($baseDir . 'bin/', 0755, true);
