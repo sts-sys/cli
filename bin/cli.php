@@ -35,18 +35,18 @@ function setupApplication() {
 }
 
 function logMessage($message) {
-    file_put_contents(APP_PATH . '/storage/logs/setup.log', $message . PHP_EOL, FILE_APPEND);
+    file_put_contents(__DIR__ . '/storage/logs/setup.log', $message . PHP_EOL, FILE_APPEND);
 }
 
 function createDirectories() {
     // Creează directoarele necesare
-    if (!file_exists(APP_PATH . '/logs') && defined(APP_PATH)) {
-        mkdir(APP_PATH . 'storage/logs', 0755, true);
+    if (!file_exists(__DIR__ . '/storage/logs/')) {
+        mkdir(__DIR__ . 'storage/logs', 0755, true);
         echo "Directorul 'logs' a fost creat.\n";
     }
   
-    if (!file_exists(APP_PATH . '/database/migrations') && defined(APP_PATH)) {
-        mkdir(APP_PATH . 'database/migrations', 0755, true);
+    if (!file_exists(__DIR__ . '/database/migrations/')) {
+        mkdir(__DIR__ . '/database/migrations/', 0755, true);
         echo "Directorul 'migrations' a fost creat.\n";
     }
     
@@ -59,11 +59,11 @@ function createConfigurationFiles() {
     // Creează fișiere de configurare necesare
     if(!defined(APP_PATH)) return;
   
-    $configFilePath = APP_PATH . 'bin/config.json';
+    $configFilePath = __DIR__ . '/bin/config.json';
     if (!file_exists($configFilePath)) {
         $configContent = json_encode([
             'defaultType' => 'module',
-            'pluginDirectory' => 'plugins'
+            'pluginDirectory' => 'plugins/'
         ], JSON_PRETTY_PRINT);
         file_put_contents($configFilePath, $configContent);
         logMessage( "Fișierul de configurare 'config.json' a fost creat.\n" );
