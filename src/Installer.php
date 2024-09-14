@@ -8,19 +8,19 @@ class Installer {
        
         $baseDir = __DIR__ . '../';
         echo "[*] Creează directorul 'bin' dacă nu există...\n";
-        if (!file_exists($baseDir . 'bin/')) {
+        if (!file_exists($baseDir . 'bin')) {
             mkdir($baseDir . 'bin/', 0755, true);
             echo "[*] Directorul 'bin' a fost creat...\n";
         }
 
         echo "[*] Creează directorul 'logs' dacă nu există...\n";
-        if (!file_exists($baseDir . 'logs/')) {
+        if (!file_exists($baseDir . 'logs')) {
             mkdir($baseDir . 'logs/', 0755, true);
             echo "[*] Directorul 'logs' a fost creat...\n";
         }
 
         echo "[*] Creează directorul 'migrations' dacă nu există...\n";
-        if (!file_exists($baseDir . 'migrations/')) {
+        if (!file_exists($baseDir . 'migrations')) {
             mkdir($baseDir . 'migrations/', 0755, true);
             echo "[*] Directorul 'migrations' a fost creat...\n";
         }
