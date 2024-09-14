@@ -6,7 +6,7 @@ class Installer {
    public static function postInstall()
    {
         if(!defined('APP_PATH'))
-            thow new Exception("Failed to check application root path.");
+            throw new Exception("Failed to check application root path.");
 
         echo "Rularea scriptului postInstall...\n";
        
@@ -55,6 +55,7 @@ class Installer {
                 createDirectories();
                 createConfigurationFiles();
                 logMessage("Setup complet!");
+                exit(0);
             }
             
             function logMessage($message) {
