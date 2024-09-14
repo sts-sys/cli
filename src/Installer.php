@@ -4,12 +4,13 @@ namespace sts\cli;
 class Installer {
    public static function postInstall()
    {
-        echo "Rularea scriptului postInstall...\n";
+        echo "[*] Rularea scriptului...\n";
        
         $baseDir = __DIR__ . '../';
-        echo "Creează directorul 'bin' dacă nu există...\n";
+        echo "[*] Creează directorul 'bin' dacă nu există...\n";
         if (!file_exists($baseDir . 'bin/')) {
             mkdir($baseDir . 'bin/', 0755, true);
+            echo "[*] Directorul 'bin' a fost creat...\n";
         }
 
         // Calea către fișierul CLI care va fi creat
@@ -46,8 +47,8 @@ class Installer {
         // Setează permisiunile fișierului ca fiind executabile
         //chmod($cliFilePath, 0755);
 
-        echo "Fișierul CLI a fost creat cu succes la $cliFilePath\n";
-        echo "CLI Packege a fost instalat si configurat corespunzator !\n";
+        echo "[*] Fișierul CLI a fost creat cu succes la $cliFilePath\n";
+        echo "[*] CLI Packege a fost instalat si configurat corespunzator !\n";
         exit(0);
    }
 
