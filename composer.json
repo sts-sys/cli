@@ -1,29 +1,55 @@
 {
-    "name": "sts/cli",
-    "description": "CLI for STS framework",
-    "type": "library",
-    "keywords": ["cli", "sts", "library", "framework"],
-    "license": "MIT",
-    "version": "1.0-dev",
-    "prefer-stable": true,
-    "authors": [
-        {
-            "name": "Staark",
-            "email": "ionuzcostin@gmail.com"
-        }
+  "name": "sts/cli",
+  "description": "O aplicație CLI pentru gestionarea migrărilor bazei de date și managementul pluginurilor.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+        "name": "Staark",
+        "email": "ionuzcostin@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "ext-pdo": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "sts\\cli\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "sts\\cli\\tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@php bin/cli.php --setup",
+      "sts\\cli\\Installer::postInstall"
     ],
-    "autoload": {
-        "psr-4": {
-            "sts\\cli\\": "src/"
-        }
-    },
-    "scripts": {
-        "post-install-cmd": "sts\\cli\\Installer::postInstall",
-        "post-update-cmd": "sts\\cli\\Installer::postInstall"
-    },
-    "require": {
-        "php": "^7.4 || ^8.0"
-    },
-
-    "minimum-stability": "dev"
+    "post-update-cmd": [
+      "@php bin/cli.php --setup",
+      "sts\\cli\\Installer::postUpdate"
+    ],
+    "test": "phpunit --configuration phpunit.xml"
+  },
+  "bin": [
+    "bin/cli.php"
+  ],
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "1.x-dev"
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
 }
