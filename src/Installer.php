@@ -14,14 +14,14 @@ class Installer {
         }
 
         echo "[*] Creează directorul 'logs' dacă nu există...\n";
-        if (!file_exists($baseDir . 'logs')) {
-            mkdir($baseDir . 'logs/', 0755, true);
+        if (!file_exists($baseDir . 'storage/logs')) {
+            mkdir($baseDir . 'storage/logs/', 0755, true);
             echo "[*] Directorul 'logs' a fost creat...\n";
         }
 
         echo "[*] Creează directorul 'migrations' dacă nu există...\n";
-        if (!file_exists($baseDir . 'migrations')) {
-            mkdir($baseDir . 'migrations/', 0755, true);
+        if (!file_exists($baseDir . 'database/migrations')) {
+            mkdir($baseDir . 'database/migrations/', 0755, true);
             echo "[*] Directorul 'migrations' a fost creat...\n";
         }
 
@@ -57,7 +57,7 @@ class Installer {
         file_put_contents($cliFilePath, $cliContent);
 
         // Setează permisiunile fișierului ca fiind executabile
-        //chmod($cliFilePath, 0755);
+        chmod($cliFilePath, 0755);
 
         echo "[*] Fișierul CLI a fost creat cu succes la $cliFilePath\n";
         echo "[*] CLI Packege a fost instalat si configurat corespunzator !\n";
