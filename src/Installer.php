@@ -44,7 +44,7 @@ class Installer {
         file_put_contents($cliFilePath, $cliContent);
 
         // Setează permisiunile fișierului ca fiind executabile
-        chmod($cliFilePath, 0755);
+        //chmod($cliFilePath, 0755);
 
         echo "Fișierul CLI a fost creat cu succes la $cliFilePath\n";
         echo "CLI Packege a fost instalat si configurat corespunzator !\n";
