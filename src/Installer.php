@@ -13,6 +13,18 @@ class Installer {
             echo "[*] Directorul 'bin' a fost creat...\n";
         }
 
+        echo "[*] Creează directorul 'logs' dacă nu există...\n";
+        if (!file_exists($baseDir . 'logs/')) {
+            mkdir($baseDir . 'logs/', 0755, true);
+            echo "[*] Directorul 'logs' a fost creat...\n";
+        }
+
+        echo "[*] Creează directorul 'migrations' dacă nu există...\n";
+        if (!file_exists($baseDir . 'migrations/')) {
+            mkdir($baseDir . 'migrations/', 0755, true);
+            echo "[*] Directorul 'migrations' a fost creat...\n";
+        }
+
         // Calea către fișierul CLI care va fi creat
         $cliFilePath = $baseDir . 'bin/cli.php';
         echo "[*] Calea către fișierul CLI care va fi creat...\n";
