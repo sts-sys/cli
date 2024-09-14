@@ -18,7 +18,8 @@
 
    ```sh
    git clone https://github.com/username/mycli.git
-   cd mycli```
+   cd sts/cli
+   ```
 2. **Instalează dependențele folosind Composer:**
    ```sh
    composer install
