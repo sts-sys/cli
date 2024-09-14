@@ -2,7 +2,6 @@
 namespace sts\cli;
 
 class Installer {
-
    public static function postInstall()
    {
         if(!defined('APP_PATH'))
@@ -104,5 +103,10 @@ class Installer {
         echo "Fișierul CLI a fost creat cu succes la $cliFilePath\n";
         echo "CLI Packege a fost instalat si configurat corespunzator !\n";
         exit(0);
+   }
+
+   public static function postUpdate()
+   {
+      self::postInstall();
    }
 }
