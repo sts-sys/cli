@@ -14,7 +14,7 @@ class Installer {
 
         // Calea către fișierul CLI care va fi creat
         $cliFilePath = $baseDir . 'bin/cli.php';
-        echo "Calea către fișierul CLI care va fi creat...\n";
+        echo "[*] Calea către fișierul CLI care va fi creat...\n";
 
         $cliContent = <<<PHP
             #!/usr/bin/env php
@@ -40,6 +40,7 @@ class Installer {
         PHP;
        
         // Creează fișierul CLI
+        echo "Creează fișierul CLI\n";
         file_put_contents($cliFilePath, $cliContent);
 
         // Setează permisiunile fișierului ca fiind executabile
