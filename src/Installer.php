@@ -7,7 +7,7 @@ class Installer {
    public static function postInstall()
    {
         if(!defined('APP_PATH'))
-            throw new Exception("Failed to check application root path.");
+            throw new \Exception("Failed to check application root path.");
 
         echo "Rularea scriptului postInstall...\n";
        
