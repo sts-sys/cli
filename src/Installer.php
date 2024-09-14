@@ -1,7 +1,7 @@
 <?php
 namespace sts\cli;
 
-require once __DIR__ . '../bootstrap/defines.php';
+require_once __DIR__ . '../bootstrap/defines.php';
 
 class Installer {
    public static function postInstall()
