@@ -28,28 +28,31 @@ $dispatcher = new CommandDispatcher($registry);
 $dispatcher->dispatch($argv);
 
 function setupApplication() {
-    echo "Rularea scriptului de configurare...\n";
-
-    // Exemplu de configurări inițiale
+    logMessage("Rularea scriptului de configurare...");
     createDirectories();
     createConfigurationFiles();
-    echo "Setup complet!\n";
+    logMessage("Setup complet!");
+}
+
+function logMessage($message) {
+    file_put_contents(APP_PATH . '/storage/logs/setup.log', $message . PHP_EOL, FILE_APPEND);
 }
 
 function createDirectories() {
     // Creează directoarele necesare
-    if (!file_exists(__DIR__ . '/../logs') && defined(APP_PATH)) {
+    if (!file_exists(APP_PATH . '/logs') && defined(APP_PATH)) {
         mkdir(APP_PATH . 'storage/logs', 0755, true);
         echo "Directorul 'logs' a fost creat.\n";
     }
   
-    if (!file_exists(__DIR__ . '/../migrations') && defined(APP_PATH)) {
+    if (!file_exists(APP_PATH . '/database/migrations') && defined(APP_PATH)) {
         mkdir(APP_PATH . 'database/migrations', 0755, true);
         echo "Directorul 'migrations' a fost creat.\n";
     }
-    echo "Directorul 'logs' este deja creat.\n";
-    echo "Directorul 'migrations' este deja creat.\n";
-    echo "Se creaza fisierul de configurare...";
+    
+    logMessage( "Directorul 'logs' este deja creat.\n" );
+    logMessage( "Directorul 'migrations' este deja creat.\n" );
+    logMessage( "Se creaza fisierul de configurare..." );
 }
 
 function createConfigurationFiles() {
@@ -63,6 +66,6 @@ function createConfigurationFiles() {
             'pluginDirectory' => 'plugins'
         ], JSON_PRETTY_PRINT);
         file_put_contents($configFilePath, $configContent);
-        echo "Fișierul de configurare 'config.json' a fost creat.\n";
+        logMessage( "Fișierul de configurare 'config.json' a fost creat.\n" );
     }
 }
