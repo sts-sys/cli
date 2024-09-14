@@ -27,16 +27,16 @@ class Installer {
             use sts\cli\command\MigrationCommand;
            
             // Înregistrează comenzile disponibile
-            $registry = new CommandRegistry();
-            $registry->registerCommand('help', new HelpCommand($registry));
-            $registry->registerCommand('migrate:run', new MigrationCommand());
-            $registry->registerCommand('migrate:check', new MigrationCommand());
-            $registry->registerCommand('migrate:rollback', new MigrationCommand());
+            \$registry = new CommandRegistry();
+            \$registry->registerCommand('help', new HelpCommand(\$registry));
+            \$registry->registerCommand('migrate:run', new MigrationCommand());
+            \$registry->registerCommand('migrate:check', new MigrationCommand());
+            \$registry->registerCommand('migrate:rollback', new MigrationCommand());
             
-            $dispatcher = new CommandDispatcher($registry);
+            \$dispatcher = new CommandDispatcher(\$registry);
             
             // Rulează comanda specificată
-            $dispatcher->dispatch($argv);
+            \$dispatcher->dispatch(\$argv);
         PHP;
        
         // Creează fișierul CLI
