@@ -10,6 +10,7 @@ use sts\cli\command\MigrationCommand;
 // Verifică dacă opțiunea --setup a fost trecută ca argument
 if (in_array('--setup', $argv)) {
     // Apelează funcția de setup
+    echo "Instalarea cli este in curs...";
     setupApplication();
     exit(0);
 }
@@ -46,6 +47,9 @@ function createDirectories() {
         mkdir(APP_PATH . 'database/migrations', 0755, true);
         echo "Directorul 'migrations' a fost creat.\n";
     }
+    echo "Directorul 'logs' este deja creat.\n";
+    echo "Directorul 'migrations' este deja creat.\n";
+    echo "Se creaza fisierul de configurare...";
 }
 
 function createConfigurationFiles() {
