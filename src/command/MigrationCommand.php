@@ -15,7 +15,7 @@ class MigrationCommand extends BaseCommand
         // Conectare la baza de date
         try {
             //$this->pdo = new PDO("mysql:host=localhost;dbname=nume_baza_de_date", "utilizator", "parola");
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            //$this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (Exception $e) {
             $this->displayError("Eroare la conectarea la baza de date: " . $e->getMessage());
             exit(1);
